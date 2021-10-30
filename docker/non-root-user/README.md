@@ -15,7 +15,7 @@ If you wanted to just recreate your development environment, you would remove yo
 A couple of useful commands to be executed many times during development:
 1. `pipenv run pytest` - to run unit tests
 1. `pipenv run python ./app` - to run your custom application
-1. `pipenv check` - to check for security vulnerabilities in your development
+1. `pipenv check` - to check for security vulnerabilities in your development environment
 
 ## Container
 Execute following to build image, run the container and then remove it immediately:
