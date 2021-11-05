@@ -26,4 +26,10 @@ CONTAINER ID   IMAGE          COMMAND                  CREATED              STAT
 a0c0641dcb7e   flask-webapp   "pipenv run python .…"   About a minute ago   Up About a minute (unhealthy)   0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   flask-webapp
 ```
 
-We could try to restart the unhealthy container by specifying `restart_policy`, however it would be ignored by `docker-compose up` (https://docs.docker.com/compose/compose-file/compose-file-v3/#deploy).
+There is a 'restart' option ([link](https://docs.docker.com/compose/compose-file/compose-file-v3/#restart)), but it doesn't restart unhealthy containers :(
+
+Reference:
+- https://docs.docker.com/engine/reference/builder/#healthcheck
+- https://docs.docker.com/compose/compose-file/compose-file-v3/#healthcheck
+- https://scoutapm.com/blog/how-to-use-docker-healthcheck
+- https://medium.com/@skywalkerhunter/docker-compose-healthcheck-the-1-minute-trick-the-better-example-3f5c05b92689
