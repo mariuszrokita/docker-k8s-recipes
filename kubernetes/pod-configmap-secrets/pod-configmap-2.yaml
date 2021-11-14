@@ -20,7 +20,20 @@ spec:
       envFrom:
         - configMapRef:
             name: restaurant-config
+      env:
+        - name: EXTRA_DISH_PASSWORD
+          value: "/secrets/password.txt"
+      volumeMounts:
+        - name: restaurantdishsecret
+          mountPath: /secrets/
+
+  volumes:
+    - name: restaurantdishsecret
+      secret:
+        secretName: restaurant-dish-secret
+
 ---
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -29,3 +42,12 @@ data:
   # property-like keys
   DISH_NAME: "tikka masala"
   DESSERT: "mango lassi"
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: restaurant-dish-secret
+data:
+  password.txt: dGUtcXVpZXJvLW11Y2hv  # base64 encoded

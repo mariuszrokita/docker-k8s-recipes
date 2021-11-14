@@ -23,7 +23,14 @@ spec:
             configMapKeyRef:
               name: restaurant-config
               key: dish_of_the_day
+        - name: EXTRA_DISH_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: restaurant-dish-secret
+              key: password
+        
 ---
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -32,3 +39,12 @@ data:
   # property-like keys
   dish_of_the_day: "spaghetti alla carbonara"
   dessert_of_the_day: "ice cream"
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: restaurant-dish-secret
+data:
+  password: dGUtcXVpZXJvLW11Y2hv  # base64 encoded

@@ -1,6 +1,8 @@
-# ConfigMap
+# ConfigMap & Secrets
 
 A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+
+A Secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Secrets are similar to ConfigMaps but are specifically intended to hold confidential data.
 
 # Demo
 Let's start off with building docker image:
@@ -43,3 +45,4 @@ $ kubectl delete -f pod-configmap-2.yaml
 References:
 * https://kubernetes.io/docs/concepts/configuration/configmap/ 
 * https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/
+* https://kubernetes.io/docs/concepts/configuration/secret/
