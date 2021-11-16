@@ -50,8 +50,10 @@ The healthcheck (liveness probe) runs periodically and the pod status is still t
 Let's mess up a bit... Open terminal and type:
 ```bash
 $ minikube docker-env
+$ # or
+$ minikube ip
 ```
-Take note of the IP address assigned to DOCKER_HOST.
+Take note of the IP address.
 
 We'll modify the application state and it will start crashing. We will do that by opening up the web browser and accessing the `http://<DOCKER_HOST_IP>:5000/start-failing` address.
 
