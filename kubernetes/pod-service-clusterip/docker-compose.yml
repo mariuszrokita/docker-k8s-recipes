@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: frontapp.Dockerfile
     ports:
-      - 8080:8080
+      - 30000:8080
       
   backend:
     image: flask-backend

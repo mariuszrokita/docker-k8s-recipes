@@ -1,7 +1,9 @@
-# ClusterIP
+# ClusterIP, NodePort
 
 ## Intro
 A ClusterIP provides network connectivity within your cluster.
+
+A nodePort service makes the application running inside the pods accessible from the outside on the same port on all the nodes of the cluster.
 
 ## Demo
 
@@ -11,7 +13,7 @@ Usually web applications consist of a front app and backend, and front app is ca
 $ docker-compose up --build
 ```
 
-When opening up the `http://localhost:8080` address in your web browser, you could see something like:
+When opening up the `http://localhost:30000` address in your web browser, you could see something like:
 ```
 Hi there!
 Quote of the day: Move your honourable arse!
@@ -24,7 +26,7 @@ We can also simulate such scenario in Kubernetes. Run the following command to r
 $ kubectl apply -f k8s-app.yaml
 ```
 
-When opening up the `http://localhost:8080` address in your web browser, you could see something like:
+When opening up the `http://localhost:30000` address in your web browser, you could see something like:
 ```
 Hi there!
 Quote of the day: Move your honourable arse!
@@ -59,3 +61,7 @@ Events:            <none>
 
 
 Note, internal communication between frontend and backend pods is made possible by the `backend` ClusterIP service. The purpose of this service is to expose `backend` pods (filtering by label!) to other pods in the cluster. If you don't believe, comment out the definition of the ClusterIP service in the yaml file and run the `kubectl apply` command again :)
+
+
+References:
+* https://www.ithands-on.com/2021/10/kubernetes-101-nodeport-service-example.html

@@ -11,7 +11,7 @@ spec:
       imagePullPolicy: Never
       ports:
         - containerPort: 8080
-          hostPort: 8080
+          # hostPort: 30000   # The Front can be exposed via specifying the hostPort or by the NodePort service.
 ---
 
 apiVersion: v1
@@ -61,3 +61,17 @@ spec:
       targetPort: 5000
   selector:
     name: backend
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: front
+spec:
+  type: NodePort
+  ports:
+    - nodePort: 30000  # the port to be open on the node (port a)
+      targetPort: 8080 # the port exposed by the app running in targetted pod
+      port: 80  # the port on which the service is accessed
+  selector:
+    name: front
