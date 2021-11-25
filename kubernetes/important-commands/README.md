@@ -4,6 +4,7 @@ A couple of important commands for Minikube:
 1. `minikube start` - start your cluster
 1. `minikube stop` - stop your cluster
 1. `minikube status` - check status of your cluster
+1. `minikube ip`
 
 A couple of important commands for the `kubectl` command line tool, which is a primary tool to interact with any Kubernetes cluster:
 1. `kubectl get all` - list all resources in the default namespace
