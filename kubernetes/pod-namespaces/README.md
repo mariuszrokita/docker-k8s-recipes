@@ -27,8 +27,8 @@ production        Active   17s
 
 Now we can deploy our pods to both environments/namespaces:
 ```
-kubectl apply -f pod-dev.yml -n development
-kubectl apply -f pod-prod.yml -n production
+kubectl apply -f pod-1.yml -n development
+kubectl apply -f pod-2.yml -n production
 ```
 
 We can verify both pods are working:
