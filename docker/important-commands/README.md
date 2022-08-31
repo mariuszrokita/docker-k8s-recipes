@@ -8,6 +8,7 @@ A couple of important commands:
 1. `docker run -it <image_name:tag>` - interact with the process inside a running container
 1. `docker run --rm -it $(docker build -q .)` - build, run container, and remove it immediately
 1. `docker logs <container_id>` - display logs for a given container
+1. `docker logs --follow <container_id>` - display logs (stream of log output) continously for a given container
 1. `docker exec -it <container_id> bash` - get inside a running container and launch a shell
 1. `docker history <image_name>` - show the history of an image - layers and their sizes
 1. `watch -n 5 docker ps` - monitor containers by executing the `docker ps` command every 5 seconds
