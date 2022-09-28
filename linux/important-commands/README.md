@@ -1,4 +1,4 @@
-# Docker - important commands
+# Linux - important commands
 
 A couple of important commands:
 1. `find . | grep <filename>` - try to find file recursively
