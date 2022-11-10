@@ -6,6 +6,7 @@ A couple of important commands:
 1. `docker run <image_name:tag>` - create and start a container
 1. `docker run -d <image_name:tag>` - run a container in the background (detached)
 1. `docker run -it <image_name:tag>` - interact with the process inside a running container
+1. `docker run -it <image_name:tag> bash` - run bash inside a running container (skipping execution of the default command right after creating container "CMD")
 1. `docker run --rm -it $(docker build -q .)` - build, run container, and remove it immediately
 1. `docker logs <container_id>` - display logs for a given container
 1. `docker logs --follow <container_id>` - display logs (stream of log output) continously for a given container
